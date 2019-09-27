@@ -1,0 +1,36 @@
+{
+  "pages": [
+    "pages/home/index",
+    "pages/search/search",
+    "pages/about/about"
+  ],
+  "window": {
+    "backgroundTextStyle": "dark",
+    "backgroundColor": "#efefef",
+    "navigationBarBackgroundColor": "#ffffff",
+    "navigationBarTitleText": "TouchUI",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "list": [
+      {
+        "pagePath": "pages/home/index",
+        "text": "首页"
+      },
+      {
+        "pagePath": "pages/search/search",
+        "text": "检索"
+      },
+      {
+        "pagePath": "pages/about/about",
+        "text": "关于"
+      }
+    ]
+  },
+  "networkTimeout": {
+    "request": 10000
+  },
+  "theme": {
+    "theme-color": "#39f"
+  }
+}
