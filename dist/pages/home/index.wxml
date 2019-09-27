@@ -1,8 +1,0 @@
-<view>
-  <view class="logo">
-    <img src="" alt="logo" mode="aspectFit" class="logo-img" />
-  </view>
-  <view class="camera" style="width:100rpx;height:100rpx;margin-left:{{(imageWidth-50)/2}}px" bindtap="chickCamera">
-    <img src="" alt="" />
-  </view>
-</view>
