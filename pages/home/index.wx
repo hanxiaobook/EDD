@@ -1,41 +1,50 @@
 <template>
-  <view>
-    <view class="starContent" wx:if="{{ isShow }}">
-      <ui-star></ui-star>
+    <view>
+        <view class="logo">
+            <img src="" alt="logo" mode="aspectFit" class="logo-img">
+        </view>
+        <view class="camera" style="width:100rpx;height:100rpx;margin-left:{{(imageWidth-50)/2}}px" bindtap="chickCamera">
+            <img src="" alt="">
+        </view>
     </view>
-
-    <view class="buttonContent">
-      <button type="primary" bindtap="starShow">创建评分控件</button>
-    </view> 
-  </view>
 </template>
 
 <script>
-export default {
-  config: {
-    navigationBarTitleText: "测试",
-    backgroundColor: "#F4F4F4",
-    navigationBarTextStyle: "black"
-  },
-  data: {
-    isShow: false
-  },
-  starShow() {
-    this.setData({
-      isShow: true
-    });
-  }
-};
+    export default {
+        config: {
+            navigationBarTitleText: "测试",
+            backgroundColor: "#F4F4F4",
+            navigationBarTextStyle: "black"
+        },
+        data: {
+            isShow: false,
+            imageWidth: 0
+        },
+        onLoad() {
+            this.setData({
+                imageWidth: wx.getSystemInfoSync().windowWidth
+            })
+            console.log(this.data.imageWidth)
+        },
+        chickCamera() {
+            wx.chooseImage({
+                count: 1,
+                sizeType: ['original'],
+                sourceType: ['camera'],
+                success(res) {
+                    // tempFilePath可以作为img标签的src属性显示图片
+                    const tempFilePaths = res.tempFilePaths
+                    //TODO:发送图片路径到服务器
+                }
+            })
+        }
+
+    };
 </script>
 
 <style lang="less">
-.content {
-  .mix-flex-center();
-}
-.starContent {
-  padding: 50px 50px 0px 50px;
-}
-.buttonContent {
-  padding: 50px;
-}
+    .camera {
+        background-color: black;
+        border-radius: 50%;
+    }
 </style>

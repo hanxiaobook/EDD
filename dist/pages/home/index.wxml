@@ -1,9 +1,8 @@
 <view>
-  <view class="starContent" wx:if="{{ isShow }}">
-    <ui-star _pid="{{_pid}}"></ui-star>
+  <view class="logo">
+    <img src="" alt="logo" mode="aspectFit" class="logo-img" />
   </view>
-
-  <view class="buttonContent">
-    <button type="primary" bindtap="starShow">创建评分控件</button>
+  <view class="camera" style="width:100rpx;height:100rpx;margin-left:{{(imageWidth-50)/2}}px" bindtap="chickCamera">
+    <img src="" alt="" />
   </view>
 </view>
