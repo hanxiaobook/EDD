@@ -1,8 +1,8 @@
-<view>
+<view class="root">
   <view class="logo">
-    <img src="" alt="logo" mode="aspectFit" class="logo-img" />
+    <image src="../../img/logo.png" alt="logo" mode="aspectFit" class="logoimg" />
   </view>
-  <view class="camera" style="width:100rpx;height:100rpx;margin-left:{{(imageWidth-50)/2}}px" bindtap="chickCamera">
-    <img src="" alt="" />
+  <view class="camera" bindtap="chickCamera">
+    <image src="../../img/camera.png" alt="search" mode="aspectFit" class="searchimg" />
   </view>
 </view>

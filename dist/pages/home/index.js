@@ -6,13 +6,13 @@ Object.defineProperty(exports, "__esModule", {
 exports.default = Page({
     data: {
         isShow: false,
-        imageWidth: 0
+        phoneWidth: 0
     },
     onLoad: function onLoad() {
         this.setData({
-            imageWidth: wx.getSystemInfoSync().windowWidth
+            phoneWidth: wx.getSystemInfoSync().windowWidth
         });
-        console.log(this.data.imageWidth);
+        // console.log(this.data.phoneWidth)
     },
     chickCamera: function chickCamera() {
         wx.chooseImage({

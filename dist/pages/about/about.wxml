@@ -1,1 +1,58 @@
-<view></view>
+<view class="root">
+  <view class="aboutimg">
+    <image src="../../img/logo.png" alt="logo" class="logoimg" />
+  </view>
+  <view class="ui-row-list ui-row-list-border-indent" style="">
+    <view class="ui-row" style="height:50px;">
+      <view class="ui-col ui-col-align-center align-center valign-middle" style="flex:0 0 40px;">
+        <view class="ui-col-content align-center valign-middle">
+          <span type="comment" size="20" color="#545454" class="ui-icon icon-comment" style="color: #545454;font-size: 20px;"></span>
+        </view>
+      </view>
+      <view class="text ui-col" style="">
+        <view class="ui-col-content">
+          关于我们
+        </view>
+      </view>
+      <view class="ui-col valign-middle" style="flex:0 0 25px;">
+        <view class="ui-col-content valign-middle">
+          <span type="arrow-right" class="ui-icon icon-arrow-right" style="font-size: 16px;"></span>
+        </view>
+      </view>
+    </view>
+    <view class="ui-row" style="height:50px;">
+      <view class="ui-col ui-col-align-center align-center valign-middle" style="flex:0 0 40px;">
+        <view class="ui-col-content align-center valign-middle">
+          <span type="comment" size="20" color="#545454" class="ui-icon icon-comment" style="color: #545454;font-size: 20px;"></span>
+        </view>
+      </view>
+      <view class="text ui-col" style="">
+        <view class="ui-col-content">
+          开发团队
+        </view>
+      </view>
+      <view class="ui-col valign-middle" style="flex:0 0 25px;">
+        <view class="ui-col-content valign-middle">
+          <span type="arrow-right" class="ui-icon icon-arrow-right" style="font-size: 16px;"></span>
+        </view>
+      </view>
+    </view>
+    <view class="ui-row" style="height:50px;">
+      <view class="ui-col ui-col-align-center align-center valign-middle" style="flex:0 0 40px;">
+        <view class="ui-col-content align-center valign-middle">
+          <span type="comment" size="20" color="#545454" class="ui-icon icon-comment" style="color: #545454;font-size: 20px;"></span>
+        </view>
+      </view>
+      <view class="text ui-col" style="">
+        <view class="ui-col-content">
+          用户协议
+        </view>
+      </view>
+      <view class="ui-col valign-middle" style="flex:0 0 25px;">
+        <view class="ui-col-content valign-middle">
+          <span type="arrow-right" class="ui-icon icon-arrow-right" style="font-size: 16px;"></span>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

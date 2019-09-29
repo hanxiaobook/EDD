@@ -1,15 +1,103 @@
 <template>
-  <view></view>
+    <view style="height:100%">
+        <view class="sorting">
+        </view>
+        <view>
+
+        </view>
+        <ui-tabs class="type-color" index="{{ current9 }}" bindchange="handleChange9"
+            active-tab-style="{{activeTabStyle2}}">
+            <ui-tab>湿垃圾</ui-tab>
+            <ui-tab>干垃圾</ui-tab>
+            <ui-tab>可回收物</ui-tab>
+            <ui-tab>有害垃圾</ui-tab>
+        </ui-tabs>
+
+        <swiper class="content" current="{{ current9 }}" bindchange="handleContentChange9" style="height:940rpx">
+            <swiper-item class="sorting-img">
+                <view style="width: 100%;height:400rpx">
+                    <image src="../../img/湿垃圾.png" alt="sortingimg" mode="aspectFit" class="sortingimg" />
+                </view>
+                <scroll-view scroll-y="true" style="height: 540rpx;" bindscrolltoupper="upper" bindscrolltolower="lower" bindscroll="scroll" scroll-into-view="{{toView}}" scroll-top="{{scrollTop}}">
+                    <view class="garbage">苹果</view>
+                    <view class="garbage">苹果</view>
+                    <view class="garbage">苹果</view>
+                    <view class="garbage">苹果</view>
+                    <view class="garbage">苹果</view>
+                    <view class="garbage">苹果</view>
+                    <view class="garbage">苹果</view>
+                    <view class="garbage">苹果</view>
+                    <view class="garbage">苹果</view>
+                    <view class="garbage">苹果</view>
+                    <view class="garbage">苹果</view>
+                    <view class="garbage">苹果</view>
+                    <view class="garbage">苹果</view>
+                    <view class="garbage">苹果</view>
+                    <view class="garbage">苹果</view>
+                    <view class="garbage">苹果</view>
+                    <view class="garbage">苹果</view>
+                    <view class="garbage">苹果</view>
+                    <view class="garbage">苹果</view>
+                    <view class="garbage">苹果</view>
+                </scroll-view>
+            </swiper-item>
+            <swiper-item>
+                <image src="../../img/干垃圾.png" alt="sortingimg" mode="aspectFit" class="sortingimg" />
+            </swiper-item>
+            <swiper-item>
+                <image src="../../img/可回收物.png" alt="sortingimg" mode="aspectFit" class="sortingimg" />
+            </swiper-item>
+            <swiper-item>
+                <image src="../../img/有害垃圾.png" alt="sortingimg" mode="aspectFit" class="sortingimg" />
+            </swiper-item>
+        </swiper>
+    </view>
 </template>
 
 <script>
-export default {
-  config: {
-    navigationBarTitleText: ''
-  },
-  data: {}
-}
+    export default {
+        config: {
+            navigationBarTitleText: ''
+        },
+        data: {
+            current9: 0,
+            show8_1: true,
+            show8_2: false,
+        },
+        handleChange9(e) {
+            let index = e.detail.index
+            this.setData({
+                current9: index
+            })
+        },
+    }
 </script>
 
 <style lang="less">
+    ui-tabs {
+        background-color: #f5f5f5;
+        padding-bottom: 1px;
+    }
+
+    // .sortingimg{
+    //     width: 90%;
+    //     height: 100%;
+    // }
+    .sorting-img {
+        width: 100%;
+        height: 50%;
+    }
+.garbage{
+    display: flex;
+    width: 100%;
+    height: 100rpx;
+    border-top: solid 1px black;
+    align-items: center;
+
+}
+    .content {
+        height: 150px;
+        // line-height: 100px;
+        margin: 0 10px
+    }
 </style>

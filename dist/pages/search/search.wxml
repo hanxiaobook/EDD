@@ -1,1 +1,52 @@
-<view></view>
+<view style="height:100%">
+  <view class="sorting">
+  </view>
+  <view>
+
+  </view>
+  <ui-tabs class="type-color" index="{{ current9 }}" bindchange="handleChange9" active-tab-style="{{activeTabStyle2}}" _pid="{{_pid}}">
+    <ui-tab _pid="{{_pid}}">湿垃圾</ui-tab>
+    <ui-tab _pid="{{_pid}}">干垃圾</ui-tab>
+    <ui-tab _pid="{{_pid}}">可回收物</ui-tab>
+    <ui-tab _pid="{{_pid}}">有害垃圾</ui-tab>
+  </ui-tabs>
+
+  <swiper class="content" current="{{ current9 }}" bindchange="handleContentChange9" style="height:940rpx">
+    <swiper-item class="sorting-img">
+      <view style="width: 100%;height:400rpx">
+        <image src="../../img/湿垃圾.png" alt="sortingimg" mode="aspectFit" class="sortingimg" />
+      </view>
+      <scroll-view scroll-y="true" style="height: 540rpx;" bindscrolltoupper="upper" bindscrolltolower="lower" bindscroll="scroll" scroll-into-view="{{toView}}" scroll-top="{{scrollTop}}">
+        <view class="garbage">苹果</view>
+        <view class="garbage">苹果</view>
+        <view class="garbage">苹果</view>
+        <view class="garbage">苹果</view>
+        <view class="garbage">苹果</view>
+        <view class="garbage">苹果</view>
+        <view class="garbage">苹果</view>
+        <view class="garbage">苹果</view>
+        <view class="garbage">苹果</view>
+        <view class="garbage">苹果</view>
+        <view class="garbage">苹果</view>
+        <view class="garbage">苹果</view>
+        <view class="garbage">苹果</view>
+        <view class="garbage">苹果</view>
+        <view class="garbage">苹果</view>
+        <view class="garbage">苹果</view>
+        <view class="garbage">苹果</view>
+        <view class="garbage">苹果</view>
+        <view class="garbage">苹果</view>
+        <view class="garbage">苹果</view>
+      </scroll-view>
+    </swiper-item>
+    <swiper-item>
+      <image src="../../img/干垃圾.png" alt="sortingimg" mode="aspectFit" class="sortingimg" />
+    </swiper-item>
+    <swiper-item>
+      <image src="../../img/可回收物.png" alt="sortingimg" mode="aspectFit" class="sortingimg" />
+    </swiper-item>
+    <swiper-item>
+      <image src="../../img/有害垃圾.png" alt="sortingimg" mode="aspectFit" class="sortingimg" />
+    </swiper-item>
+  </swiper>
+</view>

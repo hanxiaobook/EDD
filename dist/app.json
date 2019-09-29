@@ -15,14 +15,20 @@
     "list": [
       {
         "pagePath": "pages/home/index",
+        "iconPath": "img/home.png",
+        "selectedIconPath": "img/home (1).png",
         "text": "首页"
       },
       {
         "pagePath": "pages/search/search",
+        "iconPath": "img/search.png",
+        "selectedIconPath": "img/search (1).png",
         "text": "检索"
       },
       {
         "pagePath": "pages/about/about",
+        "iconPath": "img/about.png",
+        "selectedIconPath": "img/about (1).png",
         "text": "关于"
       }
     ]
@@ -32,5 +38,6 @@
   },
   "theme": {
     "theme-color": "#39f"
-  }
+  },
+  "sitemapLocation": "sitemap34.json"
 }
