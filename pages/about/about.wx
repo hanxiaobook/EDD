@@ -1,15 +1,73 @@
 <template>
-  <view></view>
+    <view class="root">
+        <view class="aboutimg">
+            <image src="../../img/logo" alt="logo" class="logoimg" />
+        </view>
+        <ui-row-list border-indent>
+            <ui-row height="50">
+                <ui-col width="40" vertical-align="middle" align="center">
+                    <ui-icon type="comment" size="20" color="#545454"></ui-icon>
+                </ui-col>
+                <ui-col class="text">
+                    关于我们
+                </ui-col>
+                <ui-col width="25" vertical-align="middle">
+                    <ui-icon type="arrow-right"></ui-icon>
+                </ui-col>
+            </ui-row>
+            <ui-row height="50">
+                <ui-col width="40" vertical-align="middle" align="center">
+                    <ui-icon type="comment" size="20" color="#545454"></ui-icon>
+                </ui-col>
+                <ui-col class="text">
+                    开发团队
+                </ui-col>
+                <ui-col width="25" vertical-align="middle">
+                    <ui-icon type="arrow-right"></ui-icon>
+                </ui-col>
+            </ui-row>
+            <ui-row height="50">
+                <ui-col width="40" vertical-align="middle" align="center">
+                    <ui-icon type="comment" size="20" color="#545454"></ui-icon>
+                </ui-col>
+                <ui-col class="text">
+                    用户协议
+                </ui-col>
+                <ui-col width="25" vertical-align="middle">
+                    <ui-icon type="arrow-right"></ui-icon>
+                </ui-col>
+            </ui-row>
+        </ui-row-list>
+    </view>
 </template>
 
 <script>
-export default {
-  config: {
-    navigationBarTitleText: ''
-  },
-  data: {}
-}
+    export default {
+        config: {
+            navigationBarTitleText: ''
+        },
+        data: {}
+    }
 </script>
 
 <style lang="less">
+    .logoimg {
+        width: 400rpx;
+        height: 400rpx;
+        // border: solid 1rpx;
+    }
+
+    .ui-row-list {
+        width: 100%;
+    }
+
+    .ui-col-content {
+        line-height: 50px;
+    }
+
+    .root {
+        display: flex;
+        flex-direction: column;
+        align-items: center
+    }
 </style>
