@@ -1,7 +1,7 @@
 <template>
     <view class="root">
         <view class="aboutimg">
-            <image src="../../img/logo" alt="logo" class="logoimg" />
+            <image src="../../img/EDD" alt="logo" class="logoimg" />
         </view>
         <ui-row-list border-indent>
             <ui-row height="50">
@@ -20,7 +20,7 @@
                     <ui-icon type="comment" size="20" color="#545454"></ui-icon>
                 </ui-col>
                 <ui-col class="text">
-                    开发团队
+                    用户协议
                 </ui-col>
                 <ui-col width="25" vertical-align="middle">
                     <ui-icon type="arrow-right"></ui-icon>
@@ -31,7 +31,7 @@
                     <ui-icon type="comment" size="20" color="#545454"></ui-icon>
                 </ui-col>
                 <ui-col class="text">
-                    用户协议
+                    分享给朋友
                 </ui-col>
                 <ui-col width="25" vertical-align="middle">
                     <ui-icon type="arrow-right"></ui-icon>

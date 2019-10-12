@@ -19,12 +19,6 @@
 /* 水平垂直居中 */
 /* 超出部分出省略号 */
 /* 多行文本超出部分省略号 */
-.logo {
-  display: flex;
-  height: 500rpx;
-  width: 100%;
-  justify-content: center;
-}
 .logoimg {
   width: 400rpx;
   height: 400rpx;
@@ -34,6 +28,7 @@
   border-radius: 50%;
   width: 150rpx;
   height: 150rpx;
+  margin-top: 100rpx;
 }
 .searchimg {
   width: 60%;
@@ -45,4 +40,5 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  height: 90%;
 }

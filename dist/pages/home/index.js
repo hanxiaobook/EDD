@@ -23,6 +23,18 @@ exports.default = Page({
                 // tempFilePath可以作为img标签的src属性显示图片
                 var tempFilePaths = res.tempFilePaths;
                 //TODO:发送图片路径到服务器
+                wx.uploadFile({
+                    url: 'http://39.106.57.52/ir_upload', //接口地址
+                    filePath: tempFilePaths[0],
+                    name: 'photo',
+                    // formData: {
+                    //     'user': 'test'
+                    // },
+                    success: function success(res) {
+                        var data = res.data;
+                        //do something
+                    }
+                });
             }
         });
     }

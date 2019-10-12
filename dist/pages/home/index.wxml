@@ -1,6 +1,6 @@
 <view class="root">
   <view class="logo">
-    <image src="../../img/logo.png" alt="logo" mode="aspectFit" class="logoimg" />
+    <image src="../../img/EDD.png" alt="logo" class="logoimg" />
   </view>
   <view class="camera" bindtap="chickCamera">
     <image src="../../img/camera.png" alt="search" mode="aspectFit" class="searchimg" />

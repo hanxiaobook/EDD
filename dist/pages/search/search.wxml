@@ -1,8 +1,27 @@
 <view style="height:100%">
-  <view class="sorting">
-  </view>
-  <view>
+  <view class="searchbar">
+    <input class="searchinput" placeholder="搜索垃圾" bindinput="garbagename"></input>
+    <button class="searchbutton" bindtap="chicksearchbutton" data-show="{{ true }}"> search </button>
 
+    <ui-popup show="{{ show5 }}" height="300" background="transparent" blur="" _pid="{{_pid}}">
+      <view class="popup5">
+        <view class="popup5top">
+          <view class="name">
+            苹果
+          </view>
+          <view class="sortingname">
+            湿垃圾
+          </view>
+          <view class="sortingname">
+            HOUSEHOLDFOOD WASTE
+          </view>
+        </view>
+        <image src="../../img/湿垃圾-彩色.png" alt="sortingimg" mode="aspectFit" class="sortingimg" />
+        <view class="statement">
+          分类仅供参考
+        </view>
+      </view>
+    </ui-popup>
   </view>
   <ui-tabs class="type-color" index="{{ current9 }}" bindchange="handleChange9" active-tab-style="{{activeTabStyle2}}" _pid="{{_pid}}">
     <ui-tab _pid="{{_pid}}">湿垃圾</ui-tab>
@@ -17,25 +36,12 @@
         <image src="../../img/湿垃圾.png" alt="sortingimg" mode="aspectFit" class="sortingimg" />
       </view>
       <scroll-view scroll-y="true" style="height: 540rpx;" bindscrolltoupper="upper" bindscrolltolower="lower" bindscroll="scroll" scroll-into-view="{{toView}}" scroll-top="{{scrollTop}}">
-        <view class="garbage">苹果</view>
-        <view class="garbage">苹果</view>
-        <view class="garbage">苹果</view>
-        <view class="garbage">苹果</view>
-        <view class="garbage">苹果</view>
-        <view class="garbage">苹果</view>
-        <view class="garbage">苹果</view>
-        <view class="garbage">苹果</view>
-        <view class="garbage">苹果</view>
-        <view class="garbage">苹果</view>
-        <view class="garbage">苹果</view>
-        <view class="garbage">苹果</view>
-        <view class="garbage">苹果</view>
-        <view class="garbage">苹果</view>
-        <view class="garbage">苹果</view>
-        <view class="garbage">苹果</view>
-        <view class="garbage">苹果</view>
-        <view class="garbage">苹果</view>
-        <view class="garbage">苹果</view>
+        <view class="garbage">剩菜剩饭</view>
+        <view class="garbage">食物残渣</view>
+        <view class="garbage">菜叶</view>
+        <view class="garbage">肉类</view>
+        <view class="garbage">鱼虾</view>
+        <view class="garbage">蛋壳</view>
         <view class="garbage">苹果</view>
       </scroll-view>
     </swiper-item>

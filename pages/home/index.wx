@@ -1,7 +1,7 @@
 <template>
     <view class="root">
         <view class="logo">
-            <image src="../../img/logo.png" alt="logo" mode="aspectFit" class="logoimg" />
+            <image src="../../img/EDD.png" alt="logo" class="logoimg" />
         </view>
         <view class="camera" bindtap="chickCamera">
             <image src="../../img/camera.png" alt="search" mode="aspectFit" class="searchimg" />
@@ -12,7 +12,7 @@
 <script>
     export default {
         config: {
-            navigationBarTitleText: "测试",
+            navigationBarTitleText: "",
             backgroundColor: "#F4F4F4",
             navigationBarTextStyle: "black"
         },
@@ -35,6 +35,18 @@
                     // tempFilePath可以作为img标签的src属性显示图片
                     const tempFilePaths = res.tempFilePaths
                     //TODO:发送图片路径到服务器
+                    wx.uploadFile({
+                        url: 'http://39.106.57.52/ir_upload', //接口地址
+                        filePath: tempFilePaths[0],
+                        name: 'photo',
+                        // formData: {
+                        //     'user': 'test'
+                        // },
+                        success(res) {
+                            const data = res.data
+                            //do something
+                        }
+                    })
                 }
             })
         }
@@ -43,12 +55,12 @@
 </script>
 
 <style lang="less">
-    .logo {
-        display: flex;
-        height: 500rpx;
-        width: 100%;
-        justify-content: center;
-    }
+    // .logo {
+    //     display: flex;
+    //     height: 600rpx;
+    //     width: 100%;
+    //     justify-content: center;
+    // }
 
     .logoimg {
         width: 400rpx;
@@ -61,16 +73,20 @@
         border-radius: 50%;
         width: 150rpx;
         height: 150rpx;
+        margin-top: 100rpx;
     }
-    .searchimg{
+
+    .searchimg {
         width: 60%;
         height: 60%;
         margin-top: 17%;
         margin-left: 20%;
     }
+
     .root {
         display: flex;
         flex-direction: column;
-        align-items: center
+        align-items: center;
+        height: 90%;
     }
 </style>

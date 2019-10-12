@@ -1,6 +1,6 @@
 <view class="root">
   <view class="aboutimg">
-    <image src="../../img/logo.png" alt="logo" class="logoimg" />
+    <image src="../../img/EDD.png" alt="logo" class="logoimg" />
   </view>
   <view class="ui-row-list ui-row-list-border-indent" style="">
     <view class="ui-row" style="height:50px;">
@@ -28,7 +28,7 @@
       </view>
       <view class="text ui-col" style="">
         <view class="ui-col-content">
-          开发团队
+          用户协议
         </view>
       </view>
       <view class="ui-col valign-middle" style="flex:0 0 25px;">
@@ -45,7 +45,7 @@
       </view>
       <view class="text ui-col" style="">
         <view class="ui-col-content">
-          用户协议
+          分享给朋友
         </view>
       </view>
       <view class="ui-col valign-middle" style="flex:0 0 25px;">

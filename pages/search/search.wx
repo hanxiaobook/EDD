@@ -1,9 +1,28 @@
 <template>
     <view style="height:100%">
-        <view class="sorting">
-        </view>
-        <view>
+        <view class="searchbar">
+            <input class="searchinput" placeholder="搜索垃圾" bindinput="garbagename" />
+            <button class="searchbutton" bindtap="chicksearchbutton" data-show="{{ true }}"> search </button>
 
+            <ui-popup show="{{ show5 }}" height="300" background="transparent" blur="">
+                <view class="popup5">
+                    <view class="popup5top">
+                        <view class="name">
+                            苹果
+                        </view>
+                        <view class="sortingname">
+                            湿垃圾
+                        </view>
+                        <view class="sortingname">
+                            HOUSEHOLDFOOD WASTE
+                        </view>
+                    </view>
+                    <image src="../../img/湿垃圾-彩色.png" alt="sortingimg" mode="aspectFit" class="sortingimg" />
+                    <view class="statement">
+                        分类仅供参考
+                    </view>
+                </view>
+            </ui-popup>
         </view>
         <ui-tabs class="type-color" index="{{ current9 }}" bindchange="handleChange9"
             active-tab-style="{{activeTabStyle2}}">
@@ -18,26 +37,14 @@
                 <view style="width: 100%;height:400rpx">
                     <image src="../../img/湿垃圾.png" alt="sortingimg" mode="aspectFit" class="sortingimg" />
                 </view>
-                <scroll-view scroll-y="true" style="height: 540rpx;" bindscrolltoupper="upper" bindscrolltolower="lower" bindscroll="scroll" scroll-into-view="{{toView}}" scroll-top="{{scrollTop}}">
-                    <view class="garbage">苹果</view>
-                    <view class="garbage">苹果</view>
-                    <view class="garbage">苹果</view>
-                    <view class="garbage">苹果</view>
-                    <view class="garbage">苹果</view>
-                    <view class="garbage">苹果</view>
-                    <view class="garbage">苹果</view>
-                    <view class="garbage">苹果</view>
-                    <view class="garbage">苹果</view>
-                    <view class="garbage">苹果</view>
-                    <view class="garbage">苹果</view>
-                    <view class="garbage">苹果</view>
-                    <view class="garbage">苹果</view>
-                    <view class="garbage">苹果</view>
-                    <view class="garbage">苹果</view>
-                    <view class="garbage">苹果</view>
-                    <view class="garbage">苹果</view>
-                    <view class="garbage">苹果</view>
-                    <view class="garbage">苹果</view>
+                <scroll-view scroll-y="true" style="height: 540rpx;" bindscrolltoupper="upper" bindscrolltolower="lower"
+                    bindscroll="scroll" scroll-into-view="{{toView}}" scroll-top="{{scrollTop}}">
+                    <view class="garbage">剩菜剩饭</view>
+                    <view class="garbage">食物残渣</view>
+                    <view class="garbage">菜叶</view>
+                    <view class="garbage">肉类</view>
+                    <view class="garbage">鱼虾</view>
+                    <view class="garbage">蛋壳</view>
                     <view class="garbage">苹果</view>
                 </scroll-view>
             </swiper-item>
@@ -63,6 +70,9 @@
             current9: 0,
             show8_1: true,
             show8_2: false,
+            name: 0,
+            show2: false,
+            show5: false,
         },
         handleChange9(e) {
             let index = e.detail.index
@@ -70,6 +80,43 @@
                 current9: index
             })
         },
+        garbagename: function (e) {
+            this.setData({
+                name: e.detail.value
+            })
+        },
+        chicksearchbutton(e) {
+            // wx.request({
+            //     url: 'http://39.106.57.52', //接口地址
+            //     data: {
+            //         name: name
+            //     },
+            //     header: {
+            //         'content-type': 'application/json' // 默认值
+            //     },
+            //     method: POST,
+            //     success(res) {
+            //         console.log(res.data)
+            //     }
+            // })
+
+
+            // let show = e.currentTarget.dataset.show
+            // this.setData({
+            //     show2: show
+            // })
+
+            let show = e.currentTarget.dataset.show
+            this.setData({
+                show5: show
+            })
+
+        },
+        handleShow5() {
+            this.setData({
+                show5: false
+            })
+        }
     }
 </script>
 
@@ -87,17 +134,70 @@
         width: 100%;
         height: 50%;
     }
-.garbage{
-    display: flex;
-    width: 100%;
-    height: 100rpx;
-    border-top: solid 1px black;
-    align-items: center;
 
-}
+    .garbage {
+        display: flex;
+        width: 100%;
+        height: 100rpx;
+        border-bottom: solid 1px #d3d3d3;
+        align-items: center;
+
+    }
+
     .content {
         height: 150px;
-        // line-height: 100px;
         margin: 0 10px
+    }
+
+    .searchbar {
+        width: 100%;
+        height: 90rpx;
+        background-color: rgb(255, 255, 255);
+    }
+
+    .searchinput {
+        float: left;
+        width: 70%;
+        height: 90%;
+        background-color: #f5f5f5;
+        border-radius: 20rpx;
+        margin-left: 3%;
+        padding-left: 2%;
+    }
+
+    .searchbutton {
+        float: right;
+        width: 20%;
+        margin: 0;
+        padding: 0;
+        margin-right: 3%;
+        height: 90%;
+    }
+
+    .popup5 {
+        width: 100%;
+        background-color: #fff;
+        height: 100%;
+        margin: 0 auto;
+        border-radius: 5px;
+        overflow: hidden;
+
+        .sortingimg {
+            // width: 50%;
+            height: 60%;
+            margin: auto;
+        }
+    }
+    .popup5top{
+        width: 100%;
+        height: 30%;
+        background-color: #d3d3d3;
+
+    }
+    .statement{
+        width: 100%;
+        height: 10%;
+        border-top: solid 1rpx black;
+        border-width: 80%;
     }
 </style>
