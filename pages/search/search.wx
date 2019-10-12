@@ -87,7 +87,7 @@
         },
         chicksearchbutton(e) {
             // wx.request({
-            //     url: 'http://39.106.57.52', //接口地址
+            //     url: 'https://39.106.57.52', //接口地址
             //     data: {
             //         name: name
             //     },
