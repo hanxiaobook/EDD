@@ -26,7 +26,7 @@
                     <ui-icon type="arrow-right"></ui-icon>
                 </ui-col>
             </ui-row>
-            <ui-row height="50">
+            <!-- <ui-row height="50">
                 <ui-col width="40" vertical-align="middle" align="center">
                     <ui-icon type="comment" size="20" color="#545454"></ui-icon>
                 </ui-col>
@@ -36,7 +36,7 @@
                 <ui-col width="25" vertical-align="middle">
                     <ui-icon type="arrow-right"></ui-icon>
                 </ui-col>
-            </ui-row>
+            </ui-row> -->
         </ui-row-list>
     </view>
 </template>

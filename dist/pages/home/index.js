@@ -24,7 +24,7 @@ exports.default = Page({
                 var tempFilePaths = res.tempFilePaths;
                 //TODO:发送图片路径到服务器
                 wx.uploadFile({
-                    url: 'http://39.106.57.52/ir_upload', //接口地址
+                    url: 'https://www.hcy-null.top/ir_upload', //接口地址
                     filePath: tempFilePaths[0],
                     name: 'photo',
                     // formData: {

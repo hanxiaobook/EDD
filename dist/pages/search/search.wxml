@@ -3,27 +3,31 @@
     <input class="searchinput" placeholder="搜索垃圾" bindinput="garbagename"></input>
     <button class="searchbutton" bindtap="chicksearchbutton" data-show="{{ true }}"> search </button>
 
-    <ui-popup show="{{ show5 }}" height="300" background="transparent" blur="" _pid="{{_pid}}">
+    <ui-popup show="{{ show5 }}" height="350" background="transparent" blur="" _pid="{{_pid}}">
       <view class="popup5">
         <view class="popup5top">
+          <view class="space">
+          </view>
           <view class="name">
             苹果
           </view>
           <view class="sortingname">
             湿垃圾
           </view>
-          <view class="sortingname">
+          <view class="esortingname">
             HOUSEHOLDFOOD WASTE
           </view>
+          <!-- <view class="space">
+                        </view> -->
         </view>
-        <image src="../../img/湿垃圾-彩色.png" alt="sortingimg" mode="aspectFit" class="sortingimg" />
+        <image src="../../img/sljt.png" alt="sortingimg" mode="aspectFit" class="sortingimg" />
         <view class="statement">
           分类仅供参考
         </view>
       </view>
     </ui-popup>
   </view>
-  <ui-tabs class="type-color" index="{{ current9 }}" bindchange="handleChange9" active-tab-style="{{activeTabStyle2}}" _pid="{{_pid}}">
+  <ui-tabs class="type-color" index="{{ current9 }}" bindchange="handleChange9" ink-bar="true" active-tab-style="{{activeTabStyle2}}" _pid="{{_pid}}">
     <ui-tab _pid="{{_pid}}">湿垃圾</ui-tab>
     <ui-tab _pid="{{_pid}}">干垃圾</ui-tab>
     <ui-tab _pid="{{_pid}}">可回收物</ui-tab>
@@ -33,7 +37,7 @@
   <swiper class="content" current="{{ current9 }}" bindchange="handleContentChange9" style="height:940rpx">
     <swiper-item class="sorting-img">
       <view style="width: 100%;height:400rpx">
-        <image src="../../img/湿垃圾.png" alt="sortingimg" mode="aspectFit" class="sortingimg" />
+        <image src="../../img/slj.png" alt="sortingimg" mode="aspectFit" class="sortingimg" />
       </view>
       <scroll-view scroll-y="true" style="height: 540rpx;" bindscrolltoupper="upper" bindscrolltolower="lower" bindscroll="scroll" scroll-into-view="{{toView}}" scroll-top="{{scrollTop}}">
         <view class="garbage">剩菜剩饭</view>
@@ -46,13 +50,13 @@
       </scroll-view>
     </swiper-item>
     <swiper-item>
-      <image src="../../img/干垃圾.png" alt="sortingimg" mode="aspectFit" class="sortingimg" />
+      <image src="../../img/glj.png" alt="sortingimg" mode="aspectFit" class="sortingimg" />
     </swiper-item>
     <swiper-item>
-      <image src="../../img/可回收物.png" alt="sortingimg" mode="aspectFit" class="sortingimg" />
+      <image src="../../img/khsw.png" alt="sortingimg" mode="aspectFit" class="sortingimg" />
     </swiper-item>
     <swiper-item>
-      <image src="../../img/有害垃圾.png" alt="sortingimg" mode="aspectFit" class="sortingimg" />
+      <image src="../../img/yhlj.png" alt="sortingimg" mode="aspectFit" class="sortingimg" />
     </swiper-item>
   </swiper>
 </view>

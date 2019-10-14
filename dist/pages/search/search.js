@@ -11,6 +11,7 @@ exports.default = Page({
         name: 0,
         show2: false,
         show5: false
+
     },
     handleChange9: function handleChange9(e) {
         var index = e.detail.index;
@@ -26,7 +27,7 @@ exports.default = Page({
     },
     chicksearchbutton: function chicksearchbutton(e) {
         // wx.request({
-        //     url: 'http://39.106.57.52', //接口地址
+        //     url: 'https://39.106.57.52', //接口地址
         //     data: {
         //         name: name
         //     },

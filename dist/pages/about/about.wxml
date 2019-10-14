@@ -37,22 +37,16 @@
         </view>
       </view>
     </view>
-    <view class="ui-row" style="height:50px;">
-      <view class="ui-col ui-col-align-center align-center valign-middle" style="flex:0 0 40px;">
-        <view class="ui-col-content align-center valign-middle">
-          <span type="comment" size="20" color="#545454" class="ui-icon icon-comment" style="color: #545454;font-size: 20px;"></span>
-        </view>
-      </view>
-      <view class="text ui-col" style="">
-        <view class="ui-col-content">
-          分享给朋友
-        </view>
-      </view>
-      <view class="ui-col valign-middle" style="flex:0 0 25px;">
-        <view class="ui-col-content valign-middle">
-          <span type="arrow-right" class="ui-icon icon-arrow-right" style="font-size: 16px;"></span>
-        </view>
-      </view>
-    </view>
+    <!-- <ui-row height="50">
+                <ui-col width="40" vertical-align="middle" align="center">
+                    <ui-icon type="comment" size="20" color="#545454"></ui-icon>
+                </ui-col>
+                <ui-col class="text">
+                    分享给朋友
+                </ui-col>
+                <ui-col width="25" vertical-align="middle">
+                    <ui-icon type="arrow-right"></ui-icon>
+                </ui-col>
+            </ui-row> -->
   </view>
 </view>
