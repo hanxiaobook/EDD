@@ -10,7 +10,9 @@ export default {
   config: {
     navigationBarTitleText: 'aboutwx'
   },
-  data: {}
+  data: {
+      name: ''
+  }
 }
 </script>
 
