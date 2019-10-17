@@ -6,22 +6,29 @@
 
             <ui-popup show="{{ show5 }}" height="350" background="transparent" blur="">
                 <view class="popup5">
-                    <view class="popup5top">
+                    <view class="popup5top" style="background-color: {{bc}}">
                         <view class="space">
                         </view>
                         <view class="name">
-                            苹果
+                            {{trashname}}
                         </view>
                         <view class="sortingname">
-                            湿垃圾
+                            {{typezn}}
                         </view>
                         <view class="esortingname">
-                            HOUSEHOLDFOOD WASTE
+                            {{typeen}}
                         </view>
                         <!-- <view class="space">
                         </view> -->
                     </view>
-                    <image src="../../img/sljt.png" alt="sortingimg" mode="aspectFit" class="sortingimg" />
+                    <image src="../../img/khswt.png" alt="sortingimg" mode="aspectFit" class="sortingimg"
+                        wx:if="{{type==0}}" />
+                    <image src="../../img/yhljt.png" alt="sortingimg" mode="aspectFit" class="sortingimg"
+                        wx:if="{{type==1}}" />
+                    <image src="../../img/sljt.png" alt="sortingimg" mode="aspectFit" class="sortingimg"
+                        wx:if="{{type==2}}" />
+                    <image src="../../img/gljt.png" alt="sortingimg" mode="aspectFit" class="sortingimg"
+                        wx:if="{{type==3}}" />
                     <view class="statement">
                         分类仅供参考
                     </view>
@@ -53,19 +60,74 @@
                 </scroll-view>
             </swiper-item>
             <swiper-item>
-                <image src="../../img/glj.png" alt="sortingimg" mode="aspectFit" class="sortingimg" />
+                <view style="width: 100%;height:400rpx">
+                    <image src="../../img/glj.png" alt="sortingimg" mode="aspectFit" class="sortingimg" />
+                </view>
+                <scroll-view scroll-y="true" style="height: 540rpx;" bindscrolltoupper="upper" bindscrolltolower="lower"
+                    bindscroll="scroll" scroll-into-view="{{toView}}" scroll-top="{{scrollTop}}">
+                    <view class="garbage">剩菜剩饭</view>
+                    <view class="garbage">食物残渣</view>
+                    <view class="garbage">菜叶</view>
+                    <view class="garbage">肉类</view>
+                    <view class="garbage">鱼虾</view>
+                    <view class="garbage">蛋壳</view>
+                    <view class="garbage">苹果</view>
+                </scroll-view>
             </swiper-item>
             <swiper-item>
-                <image src="../../img/khsw.png" alt="sortingimg" mode="aspectFit" class="sortingimg" />
+                <view style="width: 100%;height:400rpx">
+                    <image src="../../img/khsw.png" alt="sortingimg" mode="aspectFit" class="sortingimg" />
+                </view>
+                <scroll-view scroll-y="true" style="height: 540rpx;" bindscrolltoupper="upper" bindscrolltolower="lower"
+                    bindscroll="scroll" scroll-into-view="{{toView}}" scroll-top="{{scrollTop}}">
+                    <view class="garbage">剩菜剩饭</view>
+                    <view class="garbage">食物残渣</view>
+                    <view class="garbage">菜叶</view>
+                    <view class="garbage">肉类</view>
+                    <view class="garbage">鱼虾</view>
+                    <view class="garbage">蛋壳</view>
+                    <view class="garbage">苹果</view>
+                </scroll-view>
             </swiper-item>
             <swiper-item>
-                <image src="../../img/yhlj.png" alt="sortingimg" mode="aspectFit" class="sortingimg" />
+                <view style="width: 100%;height:400rpx">
+                    <image src="../../img/yhlj.png" alt="sortingimg" mode="aspectFit" class="sortingimg" />
+                </view>
+                <scroll-view scroll-y="true" style="height: 540rpx;" bindscrolltoupper="upper" bindscrolltolower="lower"
+                    bindscroll="scroll" scroll-into-view="{{toView}}" scroll-top="{{scrollTop}}">
+                    <view class="garbage">剩菜剩饭</view>
+                    <view class="garbage">食物残渣</view>
+                    <view class="garbage">菜叶</view>
+                    <view class="garbage">肉类</view>
+                    <view class="garbage">鱼虾</view>
+                    <view class="garbage">蛋壳</view>
+                    <view class="garbage">苹果</view>
+                </scroll-view>
             </swiper-item>
         </swiper>
     </view>
 </template>
 
 <script>
+    const types = [
+        '可回收',
+        '有害垃圾',
+        '湿垃圾',
+        '干垃圾'
+    ]
+    const typesen = [
+        'RECYCLABLE WASTE',
+        'HAZARDOUS WASTE',
+        'HOUSEHOLDFOOD WASTE',
+        'RESIDUAL WASTE'
+    ]
+    const bcs = [
+        '#3070BE',
+        '#EB5940',
+        '#A25B45',
+        '#41413C'
+    ]
+
     export default {
         config: {
             navigationBarTitleText: ''
@@ -77,6 +139,11 @@
             name: 0,
             show2: false,
             show5: false,
+            trashname: "苹果",
+            type: -1,
+            typezn: "湿垃圾",
+            typeen: "xxxxxx",
+            bc: "",
 
         },
         handleChange9(e) {
@@ -91,30 +158,62 @@
             })
         },
         chicksearchbutton(e) {
-            // wx.request({
-            //     url: 'https://39.106.57.52', //接口地址
-            //     data: {
-            //         name: name
-            //     },
-            //     header: {
-            //         'content-type': 'application/json' // 默认值
-            //     },
-            //     method: POST,
-            //     success(res) {
-            //         console.log(res.data)
-            //     }
-            // })
-
-
-            // let show = e.currentTarget.dataset.show
-            // this.setData({
-            //     show2: show
-            // })
-
-            let show = e.currentTarget.dataset.show
-            this.setData({
-                show5: show
+            const that = this;
+            wx.showLoading({
+                title: '查询中',
             })
+            wx.request({
+                url: 'https://www.hcy-null.top/tr_request', //接口地址
+                data: {
+                    name: that.data.name
+                },
+                header: {
+                    'content-type': 'application/json' // 默认值
+                },
+                method: "POST",
+                success(res) {
+                    wx.hideLoading()
+                    console.log(res.data)
+                    if (res.data.tr_code == 200) {
+                        let show = true
+                        console.log(show)
+                        let now = res.data.result[0]
+                        that.setData({
+                            show5: show,
+                            trashname: now.name,
+                            typezn: types[now.type], //0为可回收 1为有害垃圾 2是湿垃圾 3是干垃圾
+                            typeen: typesen[now.type],
+                            bc: bcs[now.type],
+                            type: now.type,
+                        })
+
+                    } else if (data.tr_code == 250) {
+                        wx.showToast({
+                            title: '查询失败',
+                            icon: 'none',
+                            duration: 2000
+                        })
+                    } else {
+                        wx.showToast({
+                            title: '服务暂不可用',
+                            icon: 'none',
+                            duration: 2000
+                        })
+                    }
+                },
+                fail() {
+                    wx.hideLoading()
+                    wx.showToast({
+                        title: '网络错误',
+                        icon: 'none',
+                        duration: 2000
+                    })
+                }
+            })
+
+
+
+
 
         },
         handleShow5() {
@@ -126,11 +225,11 @@
 </script>
 
 <style lang="less">
-    
     ui-tabs {
         background-color: #f5f5f5;
         padding-bottom: 1px;
     }
+
     .content {
         height: 60px;
         line-height: 60px;
@@ -203,14 +302,15 @@
     .popup5top {
         width: 100%;
         height: 33%;
-        background-color: #d3d3d3;
 
+        // box-shadow: 0 2px 6px 0 rgba(0, 0, 0, .12), inset 0 -1px 0 0 #dadce0;
         .name {
             // height: 35%;
             text-align: left;
             line-height: 200%;
             margin-left: 5%;
             font-size: 150%;
+            color: white;
         }
 
         .sortingname {
@@ -219,6 +319,7 @@
             line-height: 200%;
             margin-left: 5%;
             font-size: 120%;
+            color: white;
 
         }
 
@@ -228,6 +329,7 @@
             line-height: 230%;
             margin-left: 5%;
             font-weight: 80%;
+            color: white;
         }
 
         .space {

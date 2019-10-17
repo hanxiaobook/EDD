@@ -76,25 +76,27 @@ ui-tabs {
 .popup5top {
   width: 100%;
   height: 33%;
-  background-color: #d3d3d3;
 }
 .popup5top .name {
   text-align: left;
   line-height: 200%;
   margin-left: 5%;
   font-size: 150%;
+  color: white;
 }
 .popup5top .sortingname {
   text-align: left;
   line-height: 200%;
   margin-left: 5%;
   font-size: 120%;
+  color: white;
 }
 .popup5top .esortingname {
   text-align: left;
   line-height: 230%;
   margin-left: 5%;
   font-weight: 80%;
+  color: white;
 }
 .popup5top .space {
   height: 5%;

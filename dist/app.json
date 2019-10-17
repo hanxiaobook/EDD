@@ -1,6 +1,8 @@
 {
   "pages": [
     "pages/home/index",
+    "pages/aboutus/aboutus",
+    "pages/comment/comment",
     "pages/search/search",
     "pages/about/about"
   ],
@@ -38,5 +40,6 @@
   },
   "theme": {
     "theme-color": "#39f"
-  }
+  },
+  "sitemapLocation": "sitemap35.json"
 }

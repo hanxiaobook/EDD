@@ -20,7 +20,7 @@
         </view>
       </view>
     </view>
-    <view class="ui-row" style="height:50px;">
+    <view bindtap="ChickComment" class="ui-row" style="height:50px;">
       <view class="ui-col ui-col-align-center align-center valign-middle" style="flex:0 0 40px;">
         <view class="ui-col-content align-center valign-middle">
           <span type="comment" size="20" color="#545454" class="ui-icon icon-comment" style="color: #545454;font-size: 20px;"></span>

@@ -36,6 +36,54 @@
   margin-top: 17%;
   margin-left: 20%;
 }
+.popup5 {
+  width: 95%;
+  background-color: #fff;
+  height: 100%;
+  margin: 0 auto;
+  border-radius: 5px;
+  overflow: hidden;
+}
+.popup5 .sortingimg {
+  height: 60%;
+  margin: auto;
+}
+.popup5top {
+  width: 100%;
+  height: 33%;
+}
+.popup5top .name {
+  text-align: left;
+  line-height: 200%;
+  margin-left: 5%;
+  font-size: 150%;
+  color: white;
+}
+.popup5top .sortingname {
+  text-align: left;
+  line-height: 200%;
+  margin-left: 5%;
+  font-size: 120%;
+  color: white;
+}
+.popup5top .esortingname {
+  text-align: left;
+  line-height: 230%;
+  margin-left: 5%;
+  font-weight: 80%;
+  color: white;
+}
+.popup5top .space {
+  height: 5%;
+}
+.statement {
+  width: 90%;
+  height: 10%;
+  border-top: solid 1rpx #d4d4d4;
+  margin-left: 5%;
+  text-align: center;
+  color: #d4d4d4;
+}
 .root {
   display: flex;
   flex-direction: column;

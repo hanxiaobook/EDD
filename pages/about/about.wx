@@ -15,7 +15,7 @@
                     <ui-icon type="arrow-right"></ui-icon>
                 </ui-col>
             </ui-row>
-            <ui-row height="50">
+            <ui-row height="50" bindtap="ChickComment" >
                 <ui-col width="40" vertical-align="middle" align="center">
                     <ui-icon type="comment" size="20" color="#545454"></ui-icon>
                 </ui-col>
@@ -46,7 +46,12 @@
         config: {
             navigationBarTitleText: ''
         },
-        data: {}
+        data: {},
+        ChickComment(){
+            wx.navigateTo({
+                url:"../comment/comment"
+            })
+        }
     }
 </script>
 

@@ -1,0 +1,18 @@
+<template>
+  <view>
+      <text>
+      </text>
+  </view>
+</template>
+
+<script>
+export default {
+  config: {
+    navigationBarTitleText: 'aboutwx'
+  },
+  data: {}
+}
+</script>
+
+<style lang="less">
+</style>

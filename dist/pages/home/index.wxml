@@ -5,4 +5,30 @@
   <view class="camera" bindtap="chickCamera">
     <image src="../../img/camera.png" alt="search" mode="aspectFit" class="searchimg" />
   </view>
+  <ui-popup show="{{ show5 }}" height="350" background="transparent" blur="" _pid="{{_pid}}">
+    <view class="popup5">
+      <view class="popup5top" style="background-color: {{bc}}">
+        <view class="space">
+        </view>
+        <view class="name">
+          {{trashname}}
+        </view>
+        <view class="sortingname">
+          {{typezn}}
+        </view>
+        <view class="esortingname">
+          {{typeen}}
+        </view>
+        <!-- <view class="space">
+                        </view> -->
+      </view>
+      <image src="../../img/khswt.png" alt="sortingimg" mode="aspectFit" class="sortingimg" wx:if="{{type==0}}" />
+      <image src="../../img/yhljt.png" alt="sortingimg" mode="aspectFit" class="sortingimg" wx:if="{{type==1}}" />
+      <image src="../../img/sljt.png" alt="sortingimg" mode="aspectFit" class="sortingimg" wx:if="{{type==2}}" />
+      <image src="../../img/gljt.png" alt="sortingimg" mode="aspectFit" class="sortingimg" wx:if="{{type==3}}" />
+      <view class="statement">
+        分类仅供参考
+      </view>
+    </view>
+  </ui-popup>
 </view>
