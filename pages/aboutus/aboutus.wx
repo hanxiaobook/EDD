@@ -1,19 +1,163 @@
 <template>
-  <view>
-      
-  </view>
+    <view>
+        <view class="title">
+            关于我们
+        </view>
+        <view class="span"></view>
+        <view class="designer-img">
+            <image src='../../img/design.png' mode='aspectFit' class="designer" />
+        </view>
+        <view class="designer-txt txt">
+            Designer XiaoBo
+        </view>
+
+        <view class="doc-img">
+            <image src='../../img/doc.png' mode='aspectFit' class="doc" />
+        </view>
+        <view class="doc-txt txt">
+            Document DongYa
+        </view>
+
+        <view class="recog-img">
+            <image src='../../img/recog.png' mode='aspectFit' class="recog" />
+        </view>
+        <view class="recog-txt txt">
+            Recognition LiDong
+        </view>
+
+        <view class="model-img">
+            <image src='../../img/model.png' mode='aspectFit' class="model" />
+        </view>
+        <view class="model-txt txt">
+            Model YiXuan
+        </view>
+
+        <view class="code-img">
+            <image src='../../img/code.png' mode='aspectFit' class="code" />
+        </view>
+        <view class="code-txt txt">
+            Coder ChuanYang
+        </view>
+
+        <view class="git-img">
+            <image src='../../img/github.png' mode='aspectFit' class="git" />
+        </view>
+        <view class="git-txt txt">
+            https://github.com/hanxiaobook/EDD
+        </view>
+    </view>
 </template>
 
 <script>
-export default {
-  config: {
-    navigationBarTitleText: 'aboutwx'
-  },
-  data: {
-      name: ''
-  }
-}
+    export default {
+        config: {
+            navigationBarTitleText: ''
+        },
+        data: {
+            name: ''
+        }
+    }
 </script>
 
 <style lang="less">
+    @import "../../font/fococc.wxss";
+
+    .title {
+        height: 80rpx;
+        text-align: center;
+        box-shadow: 0 2px 6px 0 rgba(0, 0, 0, .12), inset 0 -1px 0 0 #dadce0;
+        line-height: 80rpx;
+        position: absolute;
+        top: 0
+    }
+
+    .span {
+        height: 150rpx;
+    }
+
+    .txt{
+        font-family: Foco CC;
+    }
+
+    view {
+        width: 100%;
+    }
+
+    .designer {
+        height: 60rpx;
+        margin-bottom: 1%;
+    }
+
+    .designer-txt {
+        text-align: center;
+        height: 50rpx;
+        line-height: 50rpx;
+        font-size: 90%;
+        margin-bottom: 7%;
+    }
+
+    .doc {
+        height: 50rpx;
+        margin-bottom: 1%;
+    }
+
+    .doc-txt {
+        text-align: center;
+        height: 50rpx;
+        line-height: 50rpx;
+        font-size: 90%;
+        margin-bottom: 7%;
+    }
+
+    .recog {
+        height: 60rpx;
+        margin-bottom: 1%;
+    }
+
+    .recog-txt {
+        text-align: center;
+        height: 50rpx;
+        line-height: 50rpx;
+        font-size: 90%;
+        margin-bottom: 7%;
+    }
+
+    .model {
+        height: 60rpx;
+        margin-bottom: 1%;
+    }
+
+    .model-txt {
+        text-align: center;
+        height: 50rpx;
+        line-height: 50rpx;
+        font-size: 90%;
+        margin-bottom: 7%;
+    }
+
+    .code {
+        height: 60rpx;
+        margin-bottom: 1%;
+    }
+
+    .code-txt {
+        text-align: center;
+        height: 50rpx;
+        line-height: 50rpx;
+        font-size: 90%;
+        margin-bottom: 7%;
+    }
+
+    .git {
+        height: 60rpx;
+        margin-bottom: 1%;
+    }
+
+    .git-txt {
+        text-align: center;
+        height: 50rpx;
+        line-height: 50rpx;
+        font-size: 90%;
+        margin-bottom: 7%;
+    }
 </style>

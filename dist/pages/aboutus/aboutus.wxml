@@ -1,3 +1,47 @@
 <view>
+  <view class="title">
+    关于我们
+  </view>
+  <view class="span"></view>
+  <view class="designer-img">
+    <image src="../../img/design.png" mode="aspectFit" class="designer" />
+  </view>
+  <view class="designer-txt txt">
+    Designer XiaoBo
+  </view>
 
+  <view class="doc-img">
+    <image src="../../img/doc.png" mode="aspectFit" class="doc" />
+  </view>
+  <view class="doc-txt txt">
+    Document DongYa
+  </view>
+
+  <view class="recog-img">
+    <image src="../../img/recog.png" mode="aspectFit" class="recog" />
+  </view>
+  <view class="recog-txt txt">
+    Recognition LiDong
+  </view>
+
+  <view class="model-img">
+    <image src="../../img/model.png" mode="aspectFit" class="model" />
+  </view>
+  <view class="model-txt txt">
+    Model YiXuan
+  </view>
+
+  <view class="code-img">
+    <image src="../../img/code.png" mode="aspectFit" class="code" />
+  </view>
+  <view class="code-txt txt">
+    Coder ChuanYang
+  </view>
+
+  <view class="git-img">
+    <image src="../../img/github.png" mode="aspectFit" class="git" />
+  </view>
+  <view class="git-txt txt">
+    https://github.com/hanxiaobook/EDD
+  </view>
 </view>

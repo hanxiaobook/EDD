@@ -4,7 +4,7 @@
             <image src="../../img/EDD" alt="logo" class="logoimg" />
         </view>
         <ui-row-list border-indent>
-            <ui-row height="50">
+            <ui-row height="50" bindtap='aboutus'>
                 <ui-col width="40" vertical-align="middle" align="center">
                     <ui-icon type="comment" size="20" color="#545454"></ui-icon>
                 </ui-col>
@@ -51,6 +51,11 @@
             wx.navigateTo({
                 url:"../comment/comment"
             })
+        },
+        aboutus() {
+            wx.navigateTo({
+                url: '../aboutus/aboutus',
+            });
         }
     }
 </script>
