@@ -50,13 +50,7 @@
                 </view>
                 <scroll-view scroll-y="true" style="height: 540rpx;" bindscrolltoupper="upper" bindscrolltolower="lower"
                     bindscroll="scroll" scroll-into-view="{{toView}}" scroll-top="{{scrollTop}}">
-                    <view class="garbage">剩菜剩饭</view>
-                    <view class="garbage">食物残渣</view>
-                    <view class="garbage">菜叶</view>
-                    <view class="garbage">肉类</view>
-                    <view class="garbage">鱼虾</view>
-                    <view class="garbage">蛋壳</view>
-                    <view class="garbage">苹果</view>
+                    <view wx:for="{{wet_wastes}}" class="garbage">{{item}}</view>
                 </scroll-view>
             </swiper-item>
             <swiper-item>
@@ -65,13 +59,7 @@
                 </view>
                 <scroll-view scroll-y="true" style="height: 540rpx;" bindscrolltoupper="upper" bindscrolltolower="lower"
                     bindscroll="scroll" scroll-into-view="{{toView}}" scroll-top="{{scrollTop}}">
-                    <view class="garbage">剩菜剩饭</view>
-                    <view class="garbage">食物残渣</view>
-                    <view class="garbage">菜叶</view>
-                    <view class="garbage">肉类</view>
-                    <view class="garbage">鱼虾</view>
-                    <view class="garbage">蛋壳</view>
-                    <view class="garbage">苹果</view>
+                    <view wx:for="{{dry_wastes}}" class="garbage">{{item}}</view>
                 </scroll-view>
             </swiper-item>
             <swiper-item>
@@ -80,13 +68,7 @@
                 </view>
                 <scroll-view scroll-y="true" style="height: 540rpx;" bindscrolltoupper="upper" bindscrolltolower="lower"
                     bindscroll="scroll" scroll-into-view="{{toView}}" scroll-top="{{scrollTop}}">
-                    <view class="garbage">剩菜剩饭</view>
-                    <view class="garbage">食物残渣</view>
-                    <view class="garbage">菜叶</view>
-                    <view class="garbage">肉类</view>
-                    <view class="garbage">鱼虾</view>
-                    <view class="garbage">蛋壳</view>
-                    <view class="garbage">苹果</view>
+                    <view wx:for="{{recycle_wastes}}" class="garbage">{{item}}</view>
                 </scroll-view>
             </swiper-item>
             <swiper-item>
@@ -95,13 +77,7 @@
                 </view>
                 <scroll-view scroll-y="true" style="height: 540rpx;" bindscrolltoupper="upper" bindscrolltolower="lower"
                     bindscroll="scroll" scroll-into-view="{{toView}}" scroll-top="{{scrollTop}}">
-                    <view class="garbage">剩菜剩饭</view>
-                    <view class="garbage">食物残渣</view>
-                    <view class="garbage">菜叶</view>
-                    <view class="garbage">肉类</view>
-                    <view class="garbage">鱼虾</view>
-                    <view class="garbage">蛋壳</view>
-                    <view class="garbage">苹果</view>
+                    <view wx:for="{{danger_wastes}}" class="garbage">{{item}}</view>
                 </scroll-view>
             </swiper-item>
         </swiper>
@@ -144,7 +120,73 @@
             typezn: "湿垃圾",
             typeen: "xxxxxx",
             bc: "",
-
+            wet_wastes: [],
+            dry_wastes: [],
+            recycle_wastes: [],
+            danger_wastes: []
+        },
+        onShow() {
+            const that = this;
+            wx.request({
+                url: 'https://www.hcy-null.top/wet_wastes',
+                data: {},
+                header: {'content-type':'application/json'},
+                method: 'GET',
+                dataType: 'json',
+                success: (result)=>{
+                    console.log(result)
+                    that.setData({
+                        wet_wastes: result.data
+                    })
+                },
+                fail: ()=>{},
+                complete: ()=>{}
+            });
+            wx.request({
+                url: 'https://www.hcy-null.top/dry_wastes',
+                data: {},
+                header: {'content-type':'application/json'},
+                method: 'GET',
+                dataType: 'json',
+                success: (result)=>{
+                    console.log(result)
+                    that.setData({
+                        dry_wastes: result.data
+                    })
+                },
+                fail: ()=>{},
+                complete: ()=>{}
+            });
+            wx.request({
+                url: 'https://www.hcy-null.top/recycle_wastes',
+                data: {},
+                header: {'content-type':'application/json'},
+                method: 'GET',
+                dataType: 'json',
+                success: (result)=>{
+                    console.log(result)
+                    that.setData({
+                        recycle_wastes: result.data
+                    })
+                },
+                fail: ()=>{},
+                complete: ()=>{}
+            });
+            wx.request({
+                url: 'https://www.hcy-null.top/danger_wastes',
+                data: {},
+                header: {'content-type':'application/json'},
+                method: 'GET',
+                dataType: 'json',
+                success: (result)=>{
+                    console.log(result)
+                    that.setData({
+                        danger_wastes: result.data
+                    })
+                },
+                fail: ()=>{},
+                complete: ()=>{}
+            });
         },
         handleChange9(e) {
             let index = e.detail.index

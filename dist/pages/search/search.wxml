@@ -43,13 +43,7 @@
         <image src="../../img/slj.png" alt="sortingimg" mode="aspectFit" class="sortingimg" />
       </view>
       <scroll-view scroll-y="true" style="height: 540rpx;" bindscrolltoupper="upper" bindscrolltolower="lower" bindscroll="scroll" scroll-into-view="{{toView}}" scroll-top="{{scrollTop}}">
-        <view class="garbage">剩菜剩饭</view>
-        <view class="garbage">食物残渣</view>
-        <view class="garbage">菜叶</view>
-        <view class="garbage">肉类</view>
-        <view class="garbage">鱼虾</view>
-        <view class="garbage">蛋壳</view>
-        <view class="garbage">苹果</view>
+        <view wx:for="{{wet_wastes}}" class="garbage">{{item}}</view>
       </scroll-view>
     </swiper-item>
     <swiper-item>
@@ -57,13 +51,7 @@
         <image src="../../img/glj.png" alt="sortingimg" mode="aspectFit" class="sortingimg" />
       </view>
       <scroll-view scroll-y="true" style="height: 540rpx;" bindscrolltoupper="upper" bindscrolltolower="lower" bindscroll="scroll" scroll-into-view="{{toView}}" scroll-top="{{scrollTop}}">
-        <view class="garbage">剩菜剩饭</view>
-        <view class="garbage">食物残渣</view>
-        <view class="garbage">菜叶</view>
-        <view class="garbage">肉类</view>
-        <view class="garbage">鱼虾</view>
-        <view class="garbage">蛋壳</view>
-        <view class="garbage">苹果</view>
+        <view wx:for="{{dry_wastes}}" class="garbage">{{item}}</view>
       </scroll-view>
     </swiper-item>
     <swiper-item>
@@ -71,13 +59,7 @@
         <image src="../../img/khsw.png" alt="sortingimg" mode="aspectFit" class="sortingimg" />
       </view>
       <scroll-view scroll-y="true" style="height: 540rpx;" bindscrolltoupper="upper" bindscrolltolower="lower" bindscroll="scroll" scroll-into-view="{{toView}}" scroll-top="{{scrollTop}}">
-        <view class="garbage">剩菜剩饭</view>
-        <view class="garbage">食物残渣</view>
-        <view class="garbage">菜叶</view>
-        <view class="garbage">肉类</view>
-        <view class="garbage">鱼虾</view>
-        <view class="garbage">蛋壳</view>
-        <view class="garbage">苹果</view>
+        <view wx:for="{{recycle_wastes}}" class="garbage">{{item}}</view>
       </scroll-view>
     </swiper-item>
     <swiper-item>
@@ -85,13 +67,7 @@
         <image src="../../img/yhlj.png" alt="sortingimg" mode="aspectFit" class="sortingimg" />
       </view>
       <scroll-view scroll-y="true" style="height: 540rpx;" bindscrolltoupper="upper" bindscrolltolower="lower" bindscroll="scroll" scroll-into-view="{{toView}}" scroll-top="{{scrollTop}}">
-        <view class="garbage">剩菜剩饭</view>
-        <view class="garbage">食物残渣</view>
-        <view class="garbage">菜叶</view>
-        <view class="garbage">肉类</view>
-        <view class="garbage">鱼虾</view>
-        <view class="garbage">蛋壳</view>
-        <view class="garbage">苹果</view>
+        <view wx:for="{{danger_wastes}}" class="garbage">{{item}}</view>
       </scroll-view>
     </swiper-item>
   </swiper>

@@ -19,8 +19,74 @@ exports.default = Page({
         type: -1,
         typezn: "湿垃圾",
         typeen: "xxxxxx",
-        bc: ""
-
+        bc: "",
+        wet_wastes: [],
+        dry_wastes: [],
+        recycle_wastes: [],
+        danger_wastes: []
+    },
+    onShow: function onShow() {
+        var that = this;
+        wx.request({
+            url: 'https://www.hcy-null.top/wet_wastes',
+            data: {},
+            header: { 'content-type': 'application/json' },
+            method: 'GET',
+            dataType: 'json',
+            success: function success(result) {
+                console.log(result);
+                that.setData({
+                    wet_wastes: result.data
+                });
+            },
+            fail: function fail() {},
+            complete: function complete() {}
+        });
+        wx.request({
+            url: 'https://www.hcy-null.top/dry_wastes',
+            data: {},
+            header: { 'content-type': 'application/json' },
+            method: 'GET',
+            dataType: 'json',
+            success: function success(result) {
+                console.log(result);
+                that.setData({
+                    dry_wastes: result.data
+                });
+            },
+            fail: function fail() {},
+            complete: function complete() {}
+        });
+        wx.request({
+            url: 'https://www.hcy-null.top/recycle_wastes',
+            data: {},
+            header: { 'content-type': 'application/json' },
+            method: 'GET',
+            dataType: 'json',
+            success: function success(result) {
+                console.log(result);
+                that.setData({
+                    recycle_wastes: result.data
+                });
+            },
+            fail: function fail() {},
+            complete: function complete() {}
+        });
+        wx.request({
+            url: 'https://www.hcy-null.top/danger_wastes',
+            data: {},
+            header: { 'content-type': 'application/json' },
+            method: 'GET',
+            dataType: 'json',
+            success: function success(result) {
+                console.log(result);
+                that.setData({
+                    danger_wastes: result.data
+                });
+            },
+            fail: function fail() {},
+            complete: function complete() {}
+        });
     },
     handleChange9: function handleChange9(e) {
         var index = e.detail.index;
