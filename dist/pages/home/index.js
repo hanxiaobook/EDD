@@ -24,23 +24,18 @@ exports.default = Page({
             count: 1,
             sizeType: ['original'],
             sourceType: ['camera'],
-            complete: function complete() {
-                wx.showLoading({
-                    title: '查询中'
-                });
-            },
             success: function success(res) {
                 // tempFilePath可以作为img标签的src属性显示图片
                 var tempFilePaths = res.tempFilePaths;
                 //TODO:发送图片路径到服务器
+                wx.showLoading({
+                    title: '查询中'
+                });
                 console.log(res);
                 wx.uploadFile({
                     url: 'https://www.hcy-null.top/ir_upload', //接口地址
                     filePath: tempFilePaths[0],
                     name: 'photo',
-                    // formData: {
-                    //     'user': 'test'
-                    // },
                     success: function success(res) {
                         wx.hideLoading();
                         console.log(res);
